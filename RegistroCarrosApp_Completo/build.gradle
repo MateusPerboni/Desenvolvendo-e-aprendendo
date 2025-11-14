@@ -1,0 +1,23 @@
+// Configuração do build do projeto
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.2'
+    }
+}
+
+// Configuração comum para todos os módulos
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Tarefa de limpeza
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
