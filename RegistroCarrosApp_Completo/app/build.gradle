@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
@@ -26,12 +27,16 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.cardview:cardview:1.0.0'
     
     // Retrofit para requisições HTTP
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -43,6 +48,7 @@ dependencies {
     
     // GSON para conversão JSON
     implementation 'com.google.code.gson:gson:2.10.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.0"
     
     // AndroidX lifecycle
     implementation 'androidx.lifecycle:lifecycle-viewmodel:2.7.0'

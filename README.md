@@ -35,7 +35,7 @@ http://localhost/P2/RegistroCarrosWeb/
 ### App
 ```bash
 # Compilar
-cd P2/RegistroCarrosApp
+cd P2/RegistroCarrosApp_Completo/app
 ./gradlew build
 
 # Instalar
@@ -152,20 +152,18 @@ P2/
 │   ├── register.php            # Tela registro
 │   └── conexao.php             # Conexão DB
 │
-├── RegistroCarrosApp/          # App Android
+├── RegistroCarrosApp_Completo/ # App Android
 │   └── app/src/main/
 │       ├── java/.../
 │       │   ├── LoginActivity.kt
 │       │   ├── RegisterActivity.kt
 │       │   ├── MainActivity.kt
-│       │   ├── CarroFormActivity.kt
-│       │   ├── adapter/
 │       │   ├── model/
 │       │   └── network/
 │       └── res/
-│           ├── layout/         # 6 arquivos XML
+│           ├── layout/         # XML layouts
 │           ├── values/         # Cores, temas
-│           └── values-night/   # Dark mode
+│           └── drawable/       # Gradientes e ícones
 │
 └── 📄 Documentação
     └── README.md (este arquivo)
@@ -187,7 +185,7 @@ P2/
 - **Design:** Material Design 3
 - **Networking:** Retrofit 2.9
 - **JSON:** GSON 2.10
-- **UI:** ViewBinding, RecyclerView
+- **UI:** ViewBinding, Material Components
 
 ---
 
@@ -197,7 +195,7 @@ P2/
 - **MVVM-lite:** Activities + ViewModel concepts
 - **Repository Pattern:** ApiClient + Retrofit
 - **Observer Pattern:** LiveData (opcional)
-- **Adapter Pattern:** RecyclerView Adapter
+- **Adapter Pattern:** ArrayAdapter para ListView
 - **Builder Pattern:** JsonObject, Retrofit Builder
 
 ### Web
@@ -252,6 +250,48 @@ P2/
 
 ---
 
+## 📝 Mudanças Realizadas no App
+
+### Conversão Java → Kotlin
+- ✅ Todas as classes Java convertidas para Kotlin (6 arquivos)
+- ✅ Mantida compatibilidade com API PHP existente
+
+### Integração com Backend
+- ✅ Implementado Retrofit 2.9 com OkHttp para chamadas HTTP
+- ✅ Todas as requisições usam JSON POST body (compatível com `php://input`)
+- ✅ API endpoints implementados: listar, criar, atualizar, deletar, login, registro, logout
+
+### Interface Material Design
+- ✅ Login e registro com TextInputLayout (Material Components)
+- ✅ Main screen com CardView, ListView e search bar
+- ✅ Gradientes customizados para botões e header
+- ✅ Tema com Material Design 3 colors (primary, secondary, background, surface)
+- ✅ Suporte a tema claro/escuro (via themes.xml)
+
+### Funcionalidades CRUD
+- ✅ Listar carros com sync automático do backend
+- ✅ Busca em tempo real (local filtering sem API calls)
+- ✅ Adicionar carro via AlertDialog com validação
+- ✅ Editar carro existente com pré-preenchimento de dados
+- ✅ Deletar carro com confirmação
+- ✅ Logout com confirmação de sessão
+
+### Recursos e Drawables
+- ✅ Gradientes para botões (btn_primary_gradient, btn_secondary_gradient, btn_login_gradient)
+- ✅ Dividers customizados para lista
+- ✅ Adaptive icons corrigidos (ic_launcher.xml, ic_launcher_round.xml)
+- ✅ Icon foreground placeholder criado
+- ✅ Color palette Material Design 3
+
+### Correções Recentes
+- ✅ Removido atributo privado `android:borderBottom` (erro de compilação)
+- ✅ Corrigido referência de adaptive icons para `@drawable/ic_launcher_foreground`
+- ✅ Removido SwipeRefreshLayout por instabilidade (lista recarrega programaticamente via `carregarCarros()`)
+- ✅ Remocão de código obsoleto relacionado ao pull-to-refresh
+- ✅ Validação de entrada em todos os formulários (nome, email, senha, campos de carro)
+
+---
+
 ## 🤝 Contribuindo
 
 Para melhorar o projeto:
@@ -287,6 +327,7 @@ Aplicação com:
 
 **Desenvolvido em Kotlin e PHP**
 
-Data: 13 de Novembro de 2025
+Data: 14 de Novembro de 2025
 
-Version: 1.0.0
+Version: 1.0.1
+

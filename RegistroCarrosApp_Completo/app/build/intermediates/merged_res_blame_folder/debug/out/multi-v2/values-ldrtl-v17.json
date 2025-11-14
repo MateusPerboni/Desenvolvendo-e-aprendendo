@@ -4,7 +4,7 @@
             "outputFile": "com.example.registrocarros.app-mergeDebugResources-30:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Aluno\\.gradle\\caches\\transforms-3\\99dc24b8086e9e02f60cbc0643cdc897\\transformed\\material-1.11.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\caches\\transforms-3\\1bdd1f54a3a867d72ffa3c969362ac40\\transformed\\material-1.11.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
