@@ -17,10 +17,20 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var emailInput: TextInputEditText
     private lateinit var senhaInput: TextInputEditText
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        sessionManager = SessionManager(this)
+
+        // Redireciona para a MainActivity se já estiver logado
+        if (sessionManager.fetchAuthToken() != null) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+            return // Impede a execução do resto do onCreate
+        }
 
         emailInput = findViewById(R.id.inputEmail)
         senhaInput = findViewById(R.id.inputSenha)
@@ -44,14 +54,21 @@ class LoginActivity : AppCompatActivity() {
                         val json = response.body()!!
                         val status = json.get("status")?.asString ?: ""
                         if (status == "ok") {
-                            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                            finish()
+                            // A API deve retornar o "usuario_id" no login
+                            val userId = json.get("usuario_id")?.asString
+                            if (userId != null) {
+                                sessionManager.saveAuthToken(userId)
+                                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                                finish()
+                            } else {
+                                Toast.makeText(this@LoginActivity, "ID do usuário não retornado pela API", Toast.LENGTH_SHORT).show()
+                            }
                         } else {
                             val mensagem = json.get("mensagem")?.asString ?: "Login falhou"
                             Toast.makeText(this@LoginActivity, mensagem, Toast.LENGTH_LONG).show()
                         }
                     } else {
-                        Toast.makeText(this@LoginActivity, "Erro no login", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@LoginActivity, "Erro na resposta do servidor", Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -63,8 +80,6 @@ class LoginActivity : AppCompatActivity() {
 
         btnIrRegistro.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
-            finish()
         }
     }
 }
-

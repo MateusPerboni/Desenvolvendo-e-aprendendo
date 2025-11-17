@@ -10,11 +10,11 @@
 10
 11    <!-- Permissões necessárias -->
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:5:5-67
-12-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:5:22-64
+12-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:5:5-67
+12-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:5:22-64
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:6:5-79
-13-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:6:22-76
+13-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:6:5-79
+13-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:6:22-76
 14
 15    <permission
 15-->[androidx.core:core:1.9.0] C:\Users\m.perboni.ADMZOMPER\.gradle\caches\8.13\transforms\69b42b2034e80d80b18444d603f3483c\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
@@ -28,57 +28,57 @@
 19-->[androidx.core:core:1.9.0] C:\Users\m.perboni.ADMZOMPER\.gradle\caches\8.13\transforms\69b42b2034e80d80b18444d603f3483c\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 20
 21    <application
-21-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:8:5-35:19
+21-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:8:5-35:19
 22        android:allowBackup="true"
-22-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:12:9-35
+22-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:12:9-35
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 23-->[androidx.core:core:1.9.0] C:\Users\m.perboni.ADMZOMPER\.gradle\caches\8.13\transforms\69b42b2034e80d80b18444d603f3483c\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 24        android:debuggable="true"
 25        android:extractNativeLibs="false"
 26        android:icon="@mipmap/ic_launcher"
-26-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:10:9-43
+26-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:10:9-43
 27        android:label="@string/app_name"
-27-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:9:9-41
+27-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:9:9-41
 28        android:networkSecurityConfig="@xml/network_security_config"
-28-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:15:9-69
+28-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:15:9-69
 29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:11:9-54
+29-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:11:9-54
 30        android:supportsRtl="true"
-30-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:13:9-35
+30-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:13:9-35
 31        android:testOnly="true"
 32        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-32-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:14:9-65
+32-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:14:9-65
 33        android:usesCleartextTraffic="true" >
-33-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:16:9-44
+33-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:16:9-44
 34        <activity
-34-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:18:9-25:20
+34-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:18:9-25:20
 35            android:name="com.example.registrocarros.LoginActivity"
-35-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:19:13-42
+35-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:19:13-42
 36            android:exported="true" >
-36-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:20:13-36
+36-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:20:13-36
 37            <intent-filter>
-37-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:21:13-24:29
+37-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:21:13-24:29
 38                <action android:name="android.intent.action.MAIN" />
-38-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:22:17-69
-38-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:22:25-66
+38-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:22:17-69
+38-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:22:25-66
 39
 40                <category android:name="android.intent.category.LAUNCHER" />
-40-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:23:17-77
-40-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:23:27-74
+40-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:23:17-77
+40-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:23:27-74
 41            </intent-filter>
 42        </activity>
 43        <activity
-43-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:27:9-29:40
+43-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:27:9-29:40
 44            android:name="com.example.registrocarros.RegisterActivity"
-44-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:28:13-45
+44-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:28:13-45
 45            android:exported="false" />
-45-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:29:13-37
+45-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:29:13-37
 46        <activity
-46-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:31:9-33:40
+46-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:31:9-33:40
 47            android:name="com.example.registrocarros.MainActivity"
-47-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:32:13-41
+47-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:32:13-41
 48            android:exported="false" />
-48-->C:\Users\m.perboni.ADMZOMPER\Downloads\P2\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:33:13-37
+48-->C:\xampp\htdocs\P2\RegistroCarrosApp_Completo\app\src\main\AndroidManifest.xml:33:13-37
 49
 50        <provider
 50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\m.perboni.ADMZOMPER\.gradle\caches\8.13\transforms\03cd5af60f3f7e93ab20166ab39dc846\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20

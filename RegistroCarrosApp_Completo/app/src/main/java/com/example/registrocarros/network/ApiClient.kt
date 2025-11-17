@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiClient {
     // ajuste a URL base conforme o local do backend; 10.0.2.2 aponta para host Windows quando usar em emulador
-    private const val BASE_URL = "http://10.0.2.2/RegistroCarrosWeb/backend/api/"
+    private const val BASE_URL = "http://10.0.2.2/P2/RegistroCarrosWeb/backend/api/"
     private var retrofit: Retrofit? = null
     private const val TIMEOUT = 30L
 

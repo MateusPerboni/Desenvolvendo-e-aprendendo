@@ -55,12 +55,12 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (!email.contains("@")) {
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 Toast.makeText(this, "Email inválido", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Chamada de API
+            // A API espera a ação "criar" para registrar um novo usuário
             val body = mapOf("acao" to "criar", "nome" to nome, "email" to email, "senha" to senha)
             api.registrarUsuario(body).enqueue(object : Callback<JsonObject> {
                 override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
@@ -68,16 +68,15 @@ class RegisterActivity : AppCompatActivity() {
                         val json = response.body()!!
                         val status = json.get("status")?.asString ?: ""
                         if (status == "ok") {
-                            Toast.makeText(this@RegisterActivity, "Registro realizado com sucesso!\nFaça login para continuar", Toast.LENGTH_LONG).show()
-                            // Voltar para Login
+                            Toast.makeText(this@RegisterActivity, "Registro feito com sucesso! Faça o login.", Toast.LENGTH_LONG).show()
                             startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
-                            finish()
+                            finishAffinity() // Limpa o histórico de telas e vai para o login
                         } else {
                             val mensagem = json.get("mensagem")?.asString ?: "Falha no registro"
                             Toast.makeText(this@RegisterActivity, mensagem, Toast.LENGTH_LONG).show()
                         }
                     } else {
-                        Toast.makeText(this@RegisterActivity, "Erro ao registrar usuário", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@RegisterActivity, "Erro ao registrar. Tente novamente.", Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -89,7 +88,7 @@ class RegisterActivity : AppCompatActivity() {
 
         btnIrLogin.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
-            finish()
+            finish() // Fecha a tela de registro ao ir para o login
         }
     }
 }

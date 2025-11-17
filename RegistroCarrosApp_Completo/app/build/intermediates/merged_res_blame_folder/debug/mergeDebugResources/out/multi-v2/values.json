@@ -59,23 +59,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\Downloads\\P2\\P2\\RegistroCarrosApp_Completo\\app\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endColumns": "55",
-                        "endOffsets": "108"
-                    },
-                    "to": {
-                        "startLines": "1982",
-                        "startColumns": "4",
-                        "startOffsets": "131008",
-                        "endColumns": "55",
-                        "endOffsets": "131059"
-                    }
-                },
-                {
                     "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\caches\\8.13\\transforms\\071b3f1d6535d7849afa98d483344fed\\transformed\\drawerlayout-1.1.1\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -169,20 +152,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\Downloads\\P2\\P2\\RegistroCarrosApp_Completo\\app\\src\\main\\res\\values\\colors.xml",
+                    "source": "C:\\xampp\\htdocs\\P2\\RegistroCarrosApp_Completo\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "13,19,20,15,21,22,16,3,4,5,8,9,10,14,27,25,26",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "430,636,677,519,728,772,568,79,122,170,245,290,340,476,948,850,898",
-                        "endColumns": "44,39,49,47,42,52,44,41,46,47,43,48,49,41,43,46,48",
-                        "endOffsets": "470,671,722,562,766,820,608,116,164,213,284,334,385,513,987,892,942"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endColumns": "55",
+                        "endOffsets": "108"
                     },
                     "to": {
-                        "startLines": "636,692,695,940,941,942,943,944,945,948,957,958,959,964,969,970,971",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "32479,36436,36597,55087,55135,55178,55231,55276,55318,55518,56116,56160,56209,56555,56883,56927,56974",
-                        "endColumns": "44,39,49,47,42,52,44,41,46,47,43,48,49,41,43,46,48",
-                        "endOffsets": "32519,36471,36642,55130,55173,55226,55271,55313,55360,55561,56155,56204,56254,56592,56922,56969,57018"
+                        "startLines": "1982",
+                        "startColumns": "4",
+                        "startOffsets": "131008",
+                        "endColumns": "55",
+                        "endOffsets": "131059"
                     }
                 },
                 {
@@ -202,6 +185,23 @@
                         "endLines": "506,1118,1119,1120,1128,1129,1130,1815,12618",
                         "endColumns": "55,58,47,55,74,75,71,65,24",
                         "endOffsets": "25672,66750,66798,66854,67540,67616,67688,120796,764226"
+                    }
+                },
+                {
+                    "source": "C:\\xampp\\htdocs\\P2\\RegistroCarrosApp_Completo\\app\\src\\main\\res\\values\\ic_launcher_background.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endColumns": "56",
+                        "endOffsets": "109"
+                    },
+                    "to": {
+                        "startLines": "700",
+                        "startColumns": "4",
+                        "startOffsets": "36927",
+                        "endColumns": "56",
+                        "endOffsets": "36979"
                     }
                 },
                 {
@@ -258,6 +258,42 @@
                     }
                 },
                 {
+                    "source": "C:\\xampp\\htdocs\\P2\\RegistroCarrosApp_Completo\\app\\src\\main\\res\\values\\themes.xml",
+                    "from": {
+                        "startLines": "3,20",
+                        "startColumns": "4,4",
+                        "startOffsets": "95,1079",
+                        "endLines": "18,20",
+                        "endColumns": "12,76",
+                        "endOffsets": "1071,1151"
+                    },
+                    "to": {
+                        "startLines": "2550,6536",
+                        "startColumns": "4,4",
+                        "startOffsets": "179086,458587",
+                        "endLines": "2565,6536",
+                        "endColumns": "12,75",
+                        "endOffsets": "179977,458658"
+                    }
+                },
+                {
+                    "source": "C:\\xampp\\htdocs\\P2\\RegistroCarrosApp_Completo\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "13,19,20,15,21,22,16,3,4,5,8,9,10,14,27,25,26",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "430,636,677,519,728,772,568,79,122,170,245,290,340,476,948,850,898",
+                        "endColumns": "44,39,49,47,42,52,44,41,46,47,43,48,49,41,43,46,48",
+                        "endOffsets": "470,671,722,562,766,820,608,116,164,213,284,334,385,513,987,892,942"
+                    },
+                    "to": {
+                        "startLines": "636,692,695,940,941,942,943,944,945,948,957,958,959,964,969,970,971",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "32479,36436,36597,55087,55135,55178,55231,55276,55318,55518,56116,56160,56209,56555,56883,56927,56974",
+                        "endColumns": "44,39,49,47,42,52,44,41,46,47,43,48,49,41,43,46,48",
+                        "endOffsets": "32519,36471,36642,55130,55173,55226,55271,55313,55360,55561,56155,56204,56254,56592,56922,56969,57018"
+                    }
+                },
+                {
                     "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\caches\\8.13\\transforms\\b92062a9d6a91e2295406ba53f77764b\\transformed\\startup-runtime-1.1.1\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -308,42 +344,6 @@
                         "startOffsets": "124055",
                         "endColumns": "53",
                         "endOffsets": "124104"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\Downloads\\P2\\P2\\RegistroCarrosApp_Completo\\app\\src\\main\\res\\values\\ic_launcher_background.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endColumns": "56",
-                        "endOffsets": "109"
-                    },
-                    "to": {
-                        "startLines": "700",
-                        "startColumns": "4",
-                        "startOffsets": "36927",
-                        "endColumns": "56",
-                        "endOffsets": "36979"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\Downloads\\P2\\P2\\RegistroCarrosApp_Completo\\app\\src\\main\\res\\values\\themes.xml",
-                    "from": {
-                        "startLines": "3,20",
-                        "startColumns": "4,4",
-                        "startOffsets": "95,1079",
-                        "endLines": "18,20",
-                        "endColumns": "12,76",
-                        "endOffsets": "1071,1151"
-                    },
-                    "to": {
-                        "startLines": "2550,6536",
-                        "startColumns": "4,4",
-                        "startOffsets": "179086,458587",
-                        "endLines": "2565,6536",
-                        "endColumns": "12,75",
-                        "endOffsets": "179977,458658"
                     }
                 },
                 {
