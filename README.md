@@ -6,7 +6,7 @@
 ![Android](https://img.shields.io/badge/Android-14-green)
 ![Material Design](https://img.shields.io/badge/Material-Design%203-purple)
 ![PHP](https://img.shields.io/badge/PHP-7.4+-yellow)
-![Status](https://img.shields.io/badge/Status-Completo-brightgreen)
+![Status](https://img.shields.io/badge/Status-Em_desenvolvimento-orange)
 
 ---
 
