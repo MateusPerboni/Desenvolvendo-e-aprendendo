@@ -287,6 +287,8 @@ Aplicação com:
 
 **Desenvolvido em Kotlin e PHP**
 
-Data: 13 de Novembro de 2025
+Data: 26 de Novembro de 2025
 
-Version: 1.0.0
+Version: 1.1.0
+
+Projeto finalizado para entrega!!!
