@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.registrocarros.app-mergeDebugResources-30:/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "com.example.registrocarros.app-mergeDebugResources-34:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\caches\\8.13\\transforms\\7b8318ac619375e2adce6b97de92a138\\transformed\\material-1.11.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\caches\\8.13\\transforms\\b49753246ebef55d6ab63f7232177ab7\\transformed\\material-1.13.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\caches\\8.13\\transforms\\147db945ee6ab59d5a5f5a94882aa2d0\\transformed\\appcompat-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\caches\\8.13\\transforms\\2ca8f6c28ab0f8508847a921c0cc86db\\transformed\\appcompat-1.7.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

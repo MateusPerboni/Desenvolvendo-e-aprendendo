@@ -6,133 +6,107 @@
     android:orientation="vertical"
     android:background="#f5f5f5">
 
-    <!-- AppBar / Header -->
+    <!-- Cabeçalho estilo Login/Registro -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_header_gradient"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/headerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/registro_de_carros"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff" />
+            
+    </LinearLayout>
+
+    <!-- Corpo da Tela -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Campo de Busca (Fundo Branco) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:hint="@string/buscar_carro"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#ffffff"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputBusca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="#000000" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Botões de Ação -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_vertical"
             android:layout_marginBottom="12dp">
 
-            <TextView
+            <Button
+                android:id="@+id/btnAdicionar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Meus Carros"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="#ffffff" />
+                android:background="@drawable/btn_login_gradient"
+                android:textColor="#ffffff"
+                android:text="@string/adicionar_carro"
+                android:textAllCaps="false"
+                android:layout_marginEnd="8dp" />
 
             <Button
                 android:id="@+id/btnLogout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackground"
-                android:textColor="#ffffff"
-                android:text="Sair"
-                android:textSize="12sp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp" />
-
+                android:textColor="#D32F2F"
+                android:text="@string/sair"
+                android:textAllCaps="false"
+                android:textStyle="bold" />
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gerencie seu registro de carros"
-            android:textSize="12sp"
-            android:textColor="#e0e0e0" />
-
-    </LinearLayout>
-
-    <!-- Botão de ação - Adicionar Carro -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <Button
-            android:id="@+id/btnAdicionar"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:background="@drawable/btn_secondary_gradient"
-            android:textColor="#ffffff"
-            android:text="+ ADICIONAR CARRO"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:stateListAnimator="@null" />
-
-        <!-- Barra de busca -->
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Lista de Carros (Card Branco) -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputBusca"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="🔍 Buscar por marca, modelo ou cor"
-                android:inputType="text"
-                android:textSize="14sp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </LinearLayout>
-
-    <!-- Lista de carros -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Seus Carros"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#333333"
-                android:padding="16dp"
-                android:background="#f9f9f9" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@drawable/list_divider" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#ffffff">
 
             <ListView
                 android:id="@+id/listaCarros"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:divider="@drawable/list_divider"
-                android:dividerHeight="1dp"
-                android:listSelector="@drawable/list_item_selector" />
+                android:padding="4dp"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="8dp"/>
 
         </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
 
 </LinearLayout>

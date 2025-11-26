@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 
-include 'backend/conexao.php';
+include 'conexao.php';
 
 // Buscar carros do banco de dados
 $sql = "SELECT * FROM carros";

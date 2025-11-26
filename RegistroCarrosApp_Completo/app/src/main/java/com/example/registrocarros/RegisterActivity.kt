@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.registrocarros.network.ApiClient
 import com.example.registrocarros.network.ApiInterface
 import com.google.android.material.textfield.TextInputEditText
-import com.google.gson.JsonObject
+import com.google.gson.JsonElement
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -62,25 +62,30 @@ class RegisterActivity : AppCompatActivity() {
 
             // A API espera a ação "criar" para registrar um novo usuário
             val body = mapOf("acao" to "criar", "nome" to nome, "email" to email, "senha" to senha)
-            api.registrarUsuario(body).enqueue(object : Callback<JsonObject> {
-                override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
-                    if (response.isSuccessful && response.body() != null) {
-                        val json = response.body()!!
-                        val status = json.get("status")?.asString ?: ""
-                        if (status == "ok") {
-                            Toast.makeText(this@RegisterActivity, "Registro feito com sucesso! Faça o login.", Toast.LENGTH_LONG).show()
-                            startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
-                            finishAffinity() // Limpa o histórico de telas e vai para o login
+            api.registrarUsuario(body).enqueue(object : Callback<JsonElement> {
+                override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
+                    if (response.isSuccessful) {
+                        val body = response.body()
+                        if (body != null && body.isJsonObject) {
+                            val json = body.asJsonObject
+                            val status = json.get("status")?.asString ?: ""
+                            if (status == "ok") {
+                                Toast.makeText(this@RegisterActivity, "Registro feito com sucesso! Faça o login.", Toast.LENGTH_LONG).show()
+                                startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
+                                finishAffinity() // Limpa o histórico de telas e vai para o login
+                            } else {
+                                val mensagem = json.get("mensagem")?.asString ?: "Falha no registro"
+                                Toast.makeText(this@RegisterActivity, mensagem, Toast.LENGTH_LONG).show()
+                            }
                         } else {
-                            val mensagem = json.get("mensagem")?.asString ?: "Falha no registro"
-                            Toast.makeText(this@RegisterActivity, mensagem, Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@RegisterActivity, "Resposta inválida do servidor", Toast.LENGTH_SHORT).show()
                         }
                     } else {
                         Toast.makeText(this@RegisterActivity, "Erro ao registrar. Tente novamente.", Toast.LENGTH_SHORT).show()
                     }
                 }
 
-                override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+                override fun onFailure(call: Call<JsonElement>, t: Throwable) {
                     Toast.makeText(this@RegisterActivity, "Erro de rede: ${t.message}", Toast.LENGTH_LONG).show()
                 }
             })

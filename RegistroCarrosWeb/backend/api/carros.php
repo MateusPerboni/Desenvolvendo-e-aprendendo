@@ -39,7 +39,7 @@ switch ($acao) {
         $observacoes = $input["observacoes"] ?? "";
         
         $sql = $conn->prepare("INSERT INTO carros (marca, modelo, ano, cor, preco, data_compra, observacoes) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        $sql->bind_param("ssidsss", $marca, $modelo, $ano, $cor, $preco, $data_compra, $observacoes);
+       $sql->bind_param("ssissss", $marca, $modelo, $ano, $cor, $preco, $data_compra, $observacoes);
         echo $sql->execute()
             ? json_encode(["status" => "ok", "mensagem" => "Carro cadastrado com sucesso!", "id" => $conn->insert_id])
             : json_encode(["status" => "erro", "mensagem" => "Erro ao cadastrar carro: " . $sql->error]);
@@ -56,7 +56,7 @@ switch ($acao) {
         $observacoes = $input["observacoes"] ?? "";
         
         $sql = $conn->prepare("UPDATE carros SET marca=?, modelo=?, ano=?, cor=?, preco=?, data_compra=?, observacoes=? WHERE id=?");
-        $sql->bind_param("ssidssssi", $marca, $modelo, $ano, $cor, $preco, $data_compra, $observacoes, $id);
+       $sql->bind_param("ssissssi", $marca, $modelo, $ano, $cor, $preco, $data_compra, $observacoes, $id);
         echo $sql->execute()
             ? json_encode(["status" => "ok", "mensagem" => "Carro atualizado com sucesso!"])
             : json_encode(["status" => "erro", "mensagem" => "Erro ao atualizar carro: " . $sql->error]);

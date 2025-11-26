@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.registrocarros.app-mergeDebugResources-30:/values-v16/values-v16.xml",
+            "outputFile": "com.example.registrocarros.app-mergeDebugResources-34:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\caches\\8.13\\transforms\\69b42b2034e80d80b18444d603f3483c\\transformed\\core-1.9.0\\res\\values-v16\\values-v16.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "65",
-                        "endOffsets": "116"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\caches\\8.13\\transforms\\147db945ee6ab59d5a5f5a94882aa2d0\\transformed\\appcompat-1.6.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\caches\\8.13\\transforms\\2ca8f6c28ab0f8508847a921c0cc86db\\transformed\\appcompat-1.7.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -22,14 +12,6 @@
                         "endLines": "5",
                         "endColumns": "12",
                         "endOffsets": "223"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "121",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "289"
                     }
                 }
             ]

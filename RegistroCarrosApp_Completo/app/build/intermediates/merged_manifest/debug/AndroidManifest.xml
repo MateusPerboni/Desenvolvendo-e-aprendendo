@@ -41,9 +41,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.registrocarros.RegisterActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.registrocarros.MainActivity"
             android:exported="false" />
 

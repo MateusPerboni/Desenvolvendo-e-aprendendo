@@ -25,11 +25,12 @@
         </activity>
 
         <activity 
-            android:name=".RegisterActivity"
+            android:name=".MainActivity"
             android:exported="false" />
 
+        <!-- Atividade adicionada para evitar crash ao navegar para o registro -->
         <activity 
-            android:name=".MainActivity"
+            android:name=".RegisterActivity"
             android:exported="false" />
 
     </application>

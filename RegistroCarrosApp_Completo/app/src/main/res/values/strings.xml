@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Registro de Carros</string>
+    <string name="adicionar_carro">Adicionar Carro</string>
+    <string name="sair">Sair</string>
+    <string name="registrar_usu_rio">Registrar Usuário</string>
+    <string name="registro_de_carros">Registro de Carros</string>
+    <string name="criar_conta">Criar Conta</string>
+    <string name="registre_se_para_gerenciar_seus_carros">Registre-se para gerenciar seus carros</string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="senha">Senha</string>
+    <string name="confirme_a_senha">Confirme a Senha</string>
+    <string name="criarconta">CRIAR CONTA</string>
+    <string name="j_tem_uma_conta">Já tem uma conta?</string>
+    <string name="fa_a_login">Faça login</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="entre_para_acessar_seus_registros">Entre para acessar seus registros</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="n_o_tem_conta">Não tem conta?</string>
+    <string name="buscar_carro">Buscar carro</string>
 </resources>

@@ -11,7 +11,7 @@
         android:orientation="vertical"
         android:padding="0dp">
 
-        <!-- Header com gradiente azul -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="160dp"
@@ -23,7 +23,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Criar Conta"
+                android:text="@string/criar_conta"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:textColor="#ffffff"
@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Registre-se para gerenciar seus carros"
+                android:text="@string/registre_se_para_gerenciar_seus_carros"
                 android:textSize="14sp"
                 android:textColor="#e0e0e0" />
 
@@ -74,7 +74,7 @@
                             android:id="@+id/inputNome"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Nome Completo"
+                            android:hint="@string/nome_completo"
                             android:inputType="text"
                             android:textSize="14sp" />
 
@@ -95,7 +95,7 @@
                             android:id="@+id/inputEmail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Email"
+                            android:hint="@string/email"
                             android:inputType="textEmailAddress"
                             android:textSize="14sp" />
 
@@ -117,7 +117,7 @@
                             android:id="@+id/inputSenha"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Senha"
+                            android:hint="@string/senha"
                             android:inputType="textPassword"
                             android:textSize="14sp" />
 
@@ -138,7 +138,7 @@
                             android:id="@+id/inputConfirmaSenha"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Confirme a Senha"
+                            android:hint="@string/confirme_a_senha"
                             android:inputType="textPassword"
                             android:textSize="14sp" />
 
@@ -155,7 +155,7 @@
                 android:layout_height="48dp"
                 android:background="@drawable/btn_login_gradient"
                 android:textColor="#ffffff"
-                android:text="CRIAR CONTA"
+                android:text="@string/criarconta"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="16dp"
@@ -172,7 +172,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Já tem uma conta? "
+                    android:text="@string/j_tem_uma_conta"
                     android:textSize="14sp"
                     android:textColor="#666666" />
 
@@ -182,7 +182,7 @@
                     android:layout_height="wrap_content"
                     android:background="?attr/selectableItemBackground"
                     android:textColor="#1976d2"
-                    android:text="Faça login"
+                    android:text="@string/fa_a_login"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:paddingStart="0dp"

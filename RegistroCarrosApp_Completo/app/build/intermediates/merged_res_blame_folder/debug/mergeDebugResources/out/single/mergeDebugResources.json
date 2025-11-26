@@ -1,82 +1,130 @@
 [
     {
-        "merged": "com.example.registrocarros.app-debug-32:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_btn_login_gradient.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/btn_login_gradient.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_list_item_selector.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/list_item_selector.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_btn_primary_gradient.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\btn_primary_gradient.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/xml_network_security_config.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/xml/network_security_config.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_list_item_selector_normal.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\list_item_selector_normal.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/layout_activity_register.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/layout/activity_register.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/layout_activity_login.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/layout/activity_login.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_button_rounded.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\button_rounded.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_btn_edit.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/btn_edit.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_card_bg.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/card_bg.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_btn_secondary_gradient.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/btn_secondary_gradient.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_bg_header_gradient.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\bg_header_gradient.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_btn_primary_gradient.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/btn_primary_gradient.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_list_item_selector.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\list_item_selector.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_bg_gradient.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/bg_gradient.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_list_item_selector_pressed.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\list_item_selector_pressed.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_list_item_selector_normal.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/list_item_selector_normal.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_btn_login_gradient.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\btn_login_gradient.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_btn_delete.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/btn_delete.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\layout\\activity_login.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/layout_activity_main.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/layout/activity_main.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_list_divider.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\list_divider.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_list_item_selector_pressed.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/list_item_selector_pressed.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_list_divider.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/list_divider.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_bg_header_gradient.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/bg_header_gradient.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.registrocarros.app-debug-32:/drawable_button_rounded.xml.flat",
-        "source": "com.example.registrocarros.app-main-34:/drawable/button_rounded.xml"
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_card_bg.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\card_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_btn_secondary_gradient.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\btn_secondary_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_bg_gradient.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\bg_gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_btn_edit.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\btn_edit.xml"
+    },
+    {
+        "merged": "com.example.registrocarros.app-debug-36:/layout_activity_login.xml.flat",
+        "source": "com.example.registrocarros.app-main-38:/layout/activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_btn_delete.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\btn_delete.xml"
+    },
+    {
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\xml\\network_security_config.xml"
+    },
+    {
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-debug-36:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\m.perboni.ADMZOMPER\\.gradle\\daemon\\8.13\\com.example.registrocarros.app-main-38:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     }
 ]

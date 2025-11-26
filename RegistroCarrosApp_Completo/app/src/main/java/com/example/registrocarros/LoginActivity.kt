@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.registrocarros.network.ApiClient
 import com.example.registrocarros.network.ApiInterface
 import com.google.android.material.textfield.TextInputEditText
-import com.google.gson.JsonObject
+import com.google.gson.JsonElement
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -48,31 +48,31 @@ class LoginActivity : AppCompatActivity() {
             }
 
             val body = mapOf("acao" to "login", "email" to email, "senha" to senha)
-            api.loginUsuario(body).enqueue(object : Callback<JsonObject> {
-                override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
-                    if (response.isSuccessful && response.body() != null) {
-                        val json = response.body()!!
-                        val status = json.get("status")?.asString ?: ""
-                        if (status == "ok") {
-                            // A API deve retornar o "usuario_id" no login
-                            val userId = json.get("usuario_id")?.asString
-                            if (userId != null) {
-                                sessionManager.saveAuthToken(userId)
+            api.loginUsuario(body).enqueue(object : Callback<JsonElement> {
+                override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
+                    if (response.isSuccessful) {
+                        val body = response.body()
+                        if (body != null && body.isJsonObject) {
+                            val json = body.asJsonObject
+                            val status = json.get("status")?.asString ?: ""
+                            if (status == "ok") {
+                                // Login com sucesso, salvando token genérico pois não dependemos mais do ID
+                                sessionManager.saveAuthToken("logged_in")
                                 startActivity(Intent(this@LoginActivity, MainActivity::class.java))
                                 finish()
                             } else {
-                                Toast.makeText(this@LoginActivity, "ID do usuário não retornado pela API", Toast.LENGTH_SHORT).show()
+                                val mensagem = json.get("mensagem")?.asString ?: "Login falhou"
+                                Toast.makeText(this@LoginActivity, mensagem, Toast.LENGTH_LONG).show()
                             }
                         } else {
-                            val mensagem = json.get("mensagem")?.asString ?: "Login falhou"
-                            Toast.makeText(this@LoginActivity, mensagem, Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@LoginActivity, "Resposta inválida do servidor", Toast.LENGTH_SHORT).show()
                         }
                     } else {
                         Toast.makeText(this@LoginActivity, "Erro na resposta do servidor", Toast.LENGTH_SHORT).show()
                     }
                 }
 
-                override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+                override fun onFailure(call: Call<JsonElement>, t: Throwable) {
                     Toast.makeText(this@LoginActivity, "Erro de rede: ${t.message}", Toast.LENGTH_LONG).show()
                 }
             })

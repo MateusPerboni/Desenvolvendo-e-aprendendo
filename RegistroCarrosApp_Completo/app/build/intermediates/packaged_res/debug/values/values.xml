@@ -18,7 +18,11 @@
     <color name="text_hint">#999999</color>
     <color name="text_primary">#333333</color>
     <color name="text_secondary">#666666</color>
+    <string name="adicionar_carro">Adicionar Carro</string>
     <string name="app_name">Registro de Carros</string>
+    <string name="registrar_usu_rio">Registrar Usuário</string>
+    <string name="registro_de_carros">Registro de Carros</string>
+    <string name="sair">Sair</string>
     <style name="Base.Theme.RegistroCarros" parent="Theme.MaterialComponents.Light.DarkActionBar">
         
         

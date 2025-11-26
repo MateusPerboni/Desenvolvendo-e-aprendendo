@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="24"
-        android:targetSdkVersion="34" />
+        android:targetSdkVersion="36" />
 
     <!-- Permissões necessárias -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -41,10 +41,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.registrocarros.RegisterActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.registrocarros.MainActivity"
+            android:exported="false" />
+
+        <!-- Atividade adicionada para evitar crash ao navegar para o registro -->
+        <activity
+            android:name="com.example.registrocarros.RegisterActivity"
             android:exported="false" />
 
         <provider
@@ -56,6 +58,9 @@
                 android:value="androidx.startup" />
             <meta-data
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="okhttp3.internal.platform.PlatformInitializer"
                 android:value="androidx.startup" />
             <meta-data
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"

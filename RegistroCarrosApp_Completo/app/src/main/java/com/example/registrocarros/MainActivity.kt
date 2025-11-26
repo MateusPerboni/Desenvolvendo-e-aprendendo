@@ -1,5 +1,6 @@
 package com.example.registrocarros
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -22,18 +23,18 @@ import com.example.registrocarros.network.ApiInterface
 import com.google.android.material.textfield.TextInputEditText
 import com.google.gson.Gson
 import com.google.gson.JsonArray
-import com.google.gson.JsonObject
+import com.google.gson.JsonElement
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
 
-    // Propriedades de View (inicializadas no onCreate)
+
     private lateinit var listView: ListView
     private lateinit var inputBusca: TextInputEditText
 
-    // Propriedades de lógica (inicializadas de forma preguiçosa para segurança e performance)
     private val api: ApiInterface by lazy {
         ApiClient.getClient().create(ApiInterface::class.java)
     }
@@ -54,7 +55,9 @@ class MainActivity : AppCompatActivity() {
                     textView = view.tag as TextView
                 }
                 getItem(position)?.let { carro ->
-                    textView.text = "${carro.modelo} - ${carro.marca} (${carro.ano})"
+                    // Adicionado a cor na visualização da lista
+                    val corTexto = if (!carro.cor.isNullOrEmpty()) " - ${carro.cor}" else ""
+                    textView.text = "${carro.modelo} - ${carro.marca} (${carro.ano})$corTexto"
                 }
                 return view
             }
@@ -67,12 +70,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val userId = sessionManager.fetchAuthToken()
-        if (userId == null) {
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
-            return
-        }
+        // Removida a verificação obrigatória de userId para permitir acesso compartilhado aos registros
 
         // Inicialização das Views
         listView = findViewById(R.id.listaCarros)
@@ -88,9 +86,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        carregarCarros(userId)
+        carregarCarros()
 
-        btnAdicionar.setOnClickListener { showCarroDialog(userId) }
+        btnAdicionar.setOnClickListener { showCarroDialog() }
 
         inputBusca.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -116,11 +114,14 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun carregarCarros(userId: String) {
-        api.listarCarros(mapOf("acao" to "listar", "usuario_id" to userId)).enqueue(object : Callback<JsonObject> {
-            override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
+    private fun carregarCarros() {
+        // Removido o parâmetro usuario_id da requisição
+        api.listarCarros(mapOf("acao" to "listar")).enqueue(object : Callback<JsonElement> {
+            override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
                 if (response.isSuccessful) {
-                    response.body()?.let { json ->
+                    val body = response.body()
+                    if (body != null && body.isJsonObject) {
+                        val json = body.asJsonObject
                         if (json.get("status")?.asString == "ok") {
                             val dados = json.getAsJsonArray("dados") ?: JsonArray()
                             allCarros = gson.fromJson(dados, Array<Carro>::class.java).toList()
@@ -131,7 +132,9 @@ class MainActivity : AppCompatActivity() {
                             allCarros = emptyList()
                             exibirCarros(allCarros)
                         }
-                    } ?: run {
+                    } else {
+                        // Resposta não é um Objeto JSON válido ou é nula
+                        Toast.makeText(this@MainActivity, "Resposta inválida do servidor", Toast.LENGTH_SHORT).show()
                         allCarros = emptyList()
                         exibirCarros(allCarros)
                     }
@@ -140,7 +143,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-            override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+            override fun onFailure(call: Call<JsonElement>, t: Throwable) {
                 Toast.makeText(this@MainActivity, "Erro de rede: ${t.message}", Toast.LENGTH_LONG).show()
             }
         })
@@ -162,20 +165,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun showCarroOptionsDialog(carro: Carro) {
         val precoFormatado = String.format("R$ %.2f", carro.preco)
+        // Adicionado exibição da cor e data de compra no dialog de opções
+        val corTexto = carro.cor ?: "Não informada"
+        val dataCompraTexto = carro.dataCompra ?: "Não informada"
+        
         AlertDialog.Builder(this)
             .setTitle("${carro.modelo} - ${carro.marca}")
-            .setMessage("Ano: ${carro.ano}\nPreço: $precoFormatado")
+            .setMessage("Ano: ${carro.ano}\nCor: $corTexto\nData Compra: $dataCompraTexto\nPreço: $precoFormatado")
             .setNeutralButton("Editar") { _, _ ->
-                sessionManager.fetchAuthToken()?.let { userId ->
-                    showCarroDialog(userId, carro)
-                } ?: Toast.makeText(this, "Sessão inválida. Faça login novamente.", Toast.LENGTH_LONG).show()
+                showCarroDialog(carro)
             }
             .setNegativeButton("Cancelar", null)
             .setPositiveButton("Deletar") { _, _ -> confirmarDeletarCarro(carro) }
             .show()
     }
 
-    private fun showCarroDialog(userId: String, carro: Carro? = null) {
+    private fun showCarroDialog(carro: Carro? = null) {
         val isEditing = carro != null
         val builder = AlertDialog.Builder(this)
         builder.setTitle(if (isEditing) "Editar Carro" else "Adicionar Novo Carro")
@@ -190,13 +195,40 @@ class MainActivity : AppCompatActivity() {
         val inputModelo = EditText(this).apply { hint = "Modelo"; if (isEditing) setText(carro?.modelo) }
         val inputAno = EditText(this).apply { hint = "Ano"; inputType = android.text.InputType.TYPE_CLASS_NUMBER; if (isEditing) setText(carro?.ano.toString()) }
         val inputPreco = EditText(this).apply { hint = "Preço"; inputType = android.text.InputType.TYPE_CLASS_NUMBER or android.text.InputType.TYPE_NUMBER_FLAG_DECIMAL; if (isEditing) setText(carro?.preco.toString()) }
-        val inputCor = EditText(this).apply { hint = "Cor (opcional)"; if (isEditing) setText(carro?.cor ?: "") }
         
+        // Correção: inputType explicito para Texto e melhor tratamento de nulo
+        val inputCor = EditText(this).apply { 
+            hint = "Cor (opcional)"
+            inputType = android.text.InputType.TYPE_CLASS_TEXT
+            if (isEditing) setText(carro.cor ?: "")
+        }
+        
+        // Campo Data Compra com DatePickerDialog
+        val inputDataCompra = EditText(this).apply { 
+            hint = "Data da Compra (AAAA-MM-DD)"
+            isFocusable = false // Impede a edição manual, força o uso do picker
+            isClickable = true
+            if (isEditing) setText(carro.dataCompra ?: "")
+            setOnClickListener {
+                val calendar = Calendar.getInstance()
+                val year = calendar.get(Calendar.YEAR)
+                val month = calendar.get(Calendar.MONTH)
+                val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+                DatePickerDialog(this@MainActivity, { _, selectedYear, selectedMonth, selectedDay ->
+                    // Formata a data para o padrão SQL (AAAA-MM-DD)
+                    val formattedDate = String.format("%04d-%02d-%02d", selectedYear, selectedMonth + 1, selectedDay)
+                    setText(formattedDate)
+                }, year, month, day).show()
+            }
+        }
+
         layout.addView(inputMarca)
         layout.addView(inputModelo)
         layout.addView(inputAno)
         layout.addView(inputPreco)
         layout.addView(inputCor)
+        layout.addView(inputDataCompra)
         builder.setView(layout)
 
         builder.setPositiveButton(if (isEditing) "Atualizar" else "Adicionar") { _, _ ->
@@ -205,6 +237,7 @@ class MainActivity : AppCompatActivity() {
             val anoStr = inputAno.text.toString().trim()
             val precoStr = inputPreco.text.toString().trim()
             val cor = inputCor.text.toString().trim()
+            val dataCompra = inputDataCompra.text.toString().trim()
 
             if (marca.isBlank() || modelo.isBlank() || anoStr.isBlank() || precoStr.isBlank()) {
                 Toast.makeText(this, "Marca, Modelo, Ano e Preço são obrigatórios", Toast.LENGTH_SHORT).show()
@@ -218,11 +251,12 @@ class MainActivity : AppCompatActivity() {
                 return@setPositiveButton
             }
 
+            // Removido o envio de usuario_id
             val body = mutableMapOf<String, Any>(
-                "marca" to marca, "modelo" to modelo, "ano" to ano, "preco" to preco, "cor" to cor, "usuario_id" to userId
+                "marca" to marca, "modelo" to modelo, "ano" to ano, "preco" to preco, "cor" to cor, "data_compra" to dataCompra
             )
             
-            val apiCall: Call<JsonObject>
+            val apiCall: Call<JsonElement>
             if (isEditing) {
                 body["acao"] = "atualizar"
                 if (carro != null) {
@@ -234,20 +268,25 @@ class MainActivity : AppCompatActivity() {
                 apiCall = api.criarCarro(body)
             }
 
-            apiCall.enqueue(object : Callback<JsonObject> {
-                override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
-                    val json = response.body()
-                    if (response.isSuccessful && json != null && json.get("status")?.asString == "ok") {
-                        val successMessage = if(isEditing) "Carro atualizado!" else "Carro adicionado!"
-                        Toast.makeText(this@MainActivity, successMessage, Toast.LENGTH_SHORT).show()
-                        carregarCarros(userId)
+            apiCall.enqueue(object : Callback<JsonElement> {
+                override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
+                    val body = response.body()
+                    if (response.isSuccessful && body != null && body.isJsonObject) {
+                        val json = body.asJsonObject
+                        if (json.get("status")?.asString == "ok") {
+                            val successMessage = if(isEditing) "Carro atualizado!" else "Carro adicionado!"
+                            Toast.makeText(this@MainActivity, successMessage, Toast.LENGTH_SHORT).show()
+                            carregarCarros()
+                        } else {
+                            val errorMessage = json.get("mensagem")?.asString ?: (if(isEditing) "Falha ao atualizar" else "Falha ao adicionar")
+                            Toast.makeText(this@MainActivity, errorMessage, Toast.LENGTH_LONG).show()
+                        }
                     } else {
-                        val errorMessage = json?.get("mensagem")?.asString ?: (if(isEditing) "Falha ao atualizar" else "Falha ao adicionar")
-                        Toast.makeText(this@MainActivity, errorMessage, Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@MainActivity, "Resposta inesperada do servidor", Toast.LENGTH_LONG).show()
                     }
                 }
 
-                override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+                override fun onFailure(call: Call<JsonElement>, t: Throwable) {
                     Toast.makeText(this@MainActivity, "Erro de rede: ${t.message}", Toast.LENGTH_LONG).show()
                 }
             })
@@ -257,27 +296,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun confirmarDeletarCarro(carro: Carro) {
-        val userId = sessionManager.fetchAuthToken() ?: return
-
+        // Removido o envio de usuario_id
         AlertDialog.Builder(this)
             .setTitle("Deletar Carro")
             .setMessage("Tem certeza que deseja deletar o carro ${carro.modelo}?")
             .setNegativeButton("Cancelar", null)
             .setPositiveButton("Deletar") { _, _ ->
-                val body = mapOf("acao" to "deletar", "id" to carro.id, "usuario_id" to userId)
-                api.deletarCarro(body).enqueue(object : Callback<JsonObject> {
-                    override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
-                        val json = response.body()
-                        if (response.isSuccessful && json != null && json.get("status")?.asString == "ok") {
-                            Toast.makeText(this@MainActivity, "Carro deletado!", Toast.LENGTH_SHORT).show()
-                            carregarCarros(userId)
+                val body = mapOf("acao" to "deletar", "id" to carro.id)
+                api.deletarCarro(body).enqueue(object : Callback<JsonElement> {
+                    override fun onResponse(call: Call<JsonElement>, response: Response<JsonElement>) {
+                        val body = response.body()
+                        if (response.isSuccessful && body != null && body.isJsonObject) {
+                            val json = body.asJsonObject
+                            if (json.get("status")?.asString == "ok") {
+                                Toast.makeText(this@MainActivity, "Carro deletado!", Toast.LENGTH_SHORT).show()
+                                carregarCarros()
+                            } else {
+                                val errorMessage = json.get("mensagem")?.asString ?: "Falha ao deletar o carro"
+                                Toast.makeText(this@MainActivity, errorMessage, Toast.LENGTH_LONG).show()
+                            }
                         } else {
-                            val errorMessage = json?.get("mensagem")?.asString ?: "Falha ao deletar o carro"
-                            Toast.makeText(this@MainActivity, errorMessage, Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@MainActivity, "Resposta inesperada ao deletar", Toast.LENGTH_LONG).show()
                         }
                     }
 
-                    override fun onFailure(call: Call<JsonObject>, t: Throwable) {
+                    override fun onFailure(call: Call<JsonElement>, t: Throwable) {
                         Toast.makeText(this@MainActivity, "Erro de rede: ${t.message}", Toast.LENGTH_LONG).show()
                     }
                 })

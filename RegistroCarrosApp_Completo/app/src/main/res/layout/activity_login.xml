@@ -11,10 +11,9 @@
         android:orientation="vertical"
         android:padding="0dp">
 
-        <!-- Header com gradiente azul -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="160dp"
             android:background="@drawable/bg_header_gradient"
             android:gravity="center"
             android:orientation="vertical"
@@ -23,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Registro de Carros"
+                android:text="Login"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:textColor="#ffffff"
@@ -32,7 +31,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Faça seu login para continuar"
+                android:text="Entre para acessar seus registros"
                 android:textSize="14sp"
                 android:textColor="#e0e0e0" />
 
@@ -59,6 +58,7 @@
                     android:orientation="vertical"
                     android:padding="20dp">
 
+                    <!-- Campo Email -->
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -73,12 +73,13 @@
                             android:id="@+id/inputEmail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Email"
+                            android:hint="@string/email"
                             android:inputType="textEmailAddress"
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
+                    <!-- Campo Senha -->
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -93,7 +94,7 @@
                             android:id="@+id/inputSenha"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Senha"
+                            android:hint="@string/senha"
                             android:inputType="textPassword"
                             android:textSize="14sp" />
 
@@ -103,7 +104,7 @@
 
             </androidx.cardview.widget.CardView>
 
-            <!-- Botão Login -->
+            <!-- Botão Entrar -->
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
@@ -116,28 +117,18 @@
                 android:layout_marginBottom="16dp"
                 android:stateListAnimator="@null" />
 
-            <!-- Texto informativo -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Usuário de teste: admin@test.com | Senha: 123456"
-                android:textSize="12sp"
-                android:textColor="#999999"
-                android:gravity="center"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="16dp" />
-
-            <!-- Link para Registro -->
+            <!-- Link para Cadastro -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_marginTop="12dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Não tem uma conta? "
+                    android:text="@string/n_o_tem_conta"
                     android:textSize="14sp"
                     android:textColor="#666666" />
 
@@ -147,7 +138,7 @@
                     android:layout_height="wrap_content"
                     android:background="?attr/selectableItemBackground"
                     android:textColor="#1976d2"
-                    android:text="Registre-se"
+                    android:text="@string/cadastre_se"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:paddingStart="0dp"
